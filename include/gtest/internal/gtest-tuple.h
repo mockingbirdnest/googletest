@@ -38,6 +38,8 @@
 #ifndef GTEST_INCLUDE_GTEST_INTERNAL_GTEST_TUPLE_H_
 #define GTEST_INCLUDE_GTEST_INTERNAL_GTEST_TUPLE_H_
 
+#if GTEST_USE_OWN_TR1_TUPLE
+
 #include <utility>  // For ::std::pair.
 
 // The compiler used in Symbian has a bug that prevents us from declaring the
@@ -1016,5 +1018,7 @@ inline bool operator!=(const GTEST_10_TUPLE_(T)& t,
 #undef GTEST_BY_REF_
 #undef GTEST_ADD_REF_
 #undef GTEST_TUPLE_ELEMENT_
+
+#endif
 
 #endif  // GTEST_INCLUDE_GTEST_INTERNAL_GTEST_TUPLE_H_
