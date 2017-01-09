@@ -1,4 +1,4 @@
-// Copyright 2005, Google Inc.
+﻿// Copyright 2005, Google Inc.
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -7781,4 +7781,8 @@ TEST(RegisterTest, WasRegistered) {
   }
 
   FAIL() << "Didn't find the test!";
+}
+
+TEST(UnicodeαβγTest, ProperlyEncodesабвгAnd𝕬Too) {
+  EXPECT_EQ(0, 0);
 }
