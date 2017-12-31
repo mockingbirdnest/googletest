@@ -39,14 +39,14 @@ void Subroutine() {
   EXPECT_EQ(42, 42);
 }
 
-TEST(NoFatalFailureTest, ExpectNoFatalFailure) {
+TEST(NoFatalFailureTestNoFixture, ExpectNoFatalFailure) {
   EXPECT_NO_FATAL_FAILURE(;);
   EXPECT_NO_FATAL_FAILURE(SUCCEED());
   EXPECT_NO_FATAL_FAILURE(Subroutine());
   EXPECT_NO_FATAL_FAILURE({ SUCCEED(); });
 }
 
-TEST(NoFatalFailureTest, AssertNoFatalFailure) {
+TEST(NoFatalFailureTestNoFixture, AssertNoFatalFailure) {
   ASSERT_NO_FATAL_FAILURE(;);
   ASSERT_NO_FATAL_FAILURE(SUCCEED());
   ASSERT_NO_FATAL_FAILURE(Subroutine());
