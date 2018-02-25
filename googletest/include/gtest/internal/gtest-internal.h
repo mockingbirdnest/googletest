@@ -1523,8 +1523,6 @@ class NeverThrown {
 #define GTEST_TEST_CLASS_NAME_(test_suite_name, test_name) \
   test_suite_name##_##test_name##_Test
 
-#define UTF_8(string) u8##string
-
 // Helper macro for defining tests.
 #define GTEST_TEST_(test_suite_name, test_name, parent_class, parent_id)      \
   static_assert(sizeof(GTEST_STRINGIFY_(test_suite_name)) > 1,                \
@@ -1549,7 +1547,7 @@ class NeverThrown {
   ::testing::TestInfo* const GTEST_TEST_CLASS_NAME_(test_suite_name,          \
                                                     test_name)::test_info_ =  \
       ::testing::internal::MakeAndRegisterTestInfo(                           \
-          UTF_8(#test_suite_name), UTF_8(#test_name), nullptr, nullptr,       \
+          GTEST_UTF_8(#test_suite_name), GTEST_UTF_8(#test_name), nullptr, nullptr,       \
           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
           ::testing::internal::SuiteApiResolver<                              \
               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
