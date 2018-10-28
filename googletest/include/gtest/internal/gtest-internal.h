@@ -87,7 +87,7 @@
 //
 // Complaining about the argument to GTEST_STRINGIFY_ being empty.
 // This is allowed by the spec.
-#define GTEST_STRINGIFY_HELPER_(name, ...) #name
+#define GTEST_STRINGIFY_HELPER_(name, ...) u8###name
 #define GTEST_STRINGIFY_(...) GTEST_STRINGIFY_HELPER_(__VA_ARGS__, )
 
 namespace proto2 {
