@@ -31,11 +31,11 @@
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\portability_macros.props" />
+    <Import Project="portability_macros.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\portability_macros.props" />
+    <Import Project="portability_macros.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
@@ -83,60 +83,60 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\gtest-all.cc">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..;..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..;..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    <ClCompile Include="..\src\gtest-all.cc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="..\..\src\gtest-death-test.cc">
+    <ClCompile Include="..\src\gtest-death-test.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\src\gtest-filepath.cc">
+    <ClCompile Include="..\src\gtest-filepath.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\src\gtest-port.cc">
+    <ClCompile Include="..\src\gtest-port.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\src\gtest-printers.cc">
+    <ClCompile Include="..\src\gtest-printers.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\src\gtest-test-part.cc">
+    <ClCompile Include="..\src\gtest-test-part.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\src\gtest-typed-test.cc">
+    <ClCompile Include="..\src\gtest-typed-test.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\src\gtest.cc">
+    <ClCompile Include="..\src\gtest.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\gtest\gtest-death-test.h" />
-    <ClInclude Include="..\..\include\gtest\gtest-message.h" />
-    <ClInclude Include="..\..\include\gtest\gtest-param-test.h" />
-    <ClInclude Include="..\..\include\gtest\gtest-printers.h" />
-    <ClInclude Include="..\..\include\gtest\gtest-spi.h" />
-    <ClInclude Include="..\..\include\gtest\gtest-test-part.h" />
-    <ClInclude Include="..\..\include\gtest\gtest-typed-test.h" />
-    <ClInclude Include="..\..\include\gtest\gtest.h" />
-    <ClInclude Include="..\..\include\gtest\gtest_pred_impl.h" />
-    <ClInclude Include="..\..\include\gtest\gtest_prod.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-death-test-internal.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-filepath.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-internal.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-linked_ptr.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-param-util-generated.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-param-util.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-port-arch.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-port.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-string.h" />
-    <ClInclude Include="..\..\include\gtest\internal\gtest-type-util.h" />
+    <ClInclude Include="..\include\gtest\gtest-death-test.h" />
+    <ClInclude Include="..\include\gtest\gtest-message.h" />
+    <ClInclude Include="..\include\gtest\gtest-param-test.h" />
+    <ClInclude Include="..\include\gtest\gtest-printers.h" />
+    <ClInclude Include="..\include\gtest\gtest-spi.h" />
+    <ClInclude Include="..\include\gtest\gtest-test-part.h" />
+    <ClInclude Include="..\include\gtest\gtest-typed-test.h" />
+    <ClInclude Include="..\include\gtest\gtest.h" />
+    <ClInclude Include="..\include\gtest\gtest_pred_impl.h" />
+    <ClInclude Include="..\include\gtest\gtest_prod.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-death-test-internal.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-filepath.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-internal.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-linked_ptr.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-param-util-generated.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-param-util.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-port-arch.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-port.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-string.h" />
+    <ClInclude Include="..\include\gtest\internal\gtest-type-util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
