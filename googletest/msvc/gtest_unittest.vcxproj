@@ -63,6 +63,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <CallingConvention>VectorCall</CallingConvention>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)gtest_unittest.exe</OutputFile>
@@ -80,6 +81,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <CallingConvention>VectorCall</CallingConvention>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)gtest_unittest.exe</OutputFile>
