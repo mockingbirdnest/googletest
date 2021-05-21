@@ -1145,7 +1145,7 @@ class PairMatchBase {
   }
 
  private:
-  static ::std::ostream& GetDesc(::std::ostream& os) {  // NOLINT
+  static ::std::ostream& __cdecl GetDesc(::std::ostream& os) {  // NOLINT
     return os << D::Desc();
   }
 
@@ -1766,7 +1766,7 @@ class FloatingEq2Matcher {
   }
 
  private:
-  static ::std::ostream& GetDesc(::std::ostream& os) {  // NOLINT
+  static ::std::ostream& __cdecl GetDesc(::std::ostream& os) {  // NOLINT
     return os << "an almost-equal pair";
   }
 
