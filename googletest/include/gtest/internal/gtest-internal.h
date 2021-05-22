@@ -87,7 +87,7 @@
 //
 // Complaining about the argument to GTEST_STRINGIFY_ being empty.
 // This is allowed by the spec.
-#define GTEST_STRINGIFY_HELPER_(name, ...) #name
+#define GTEST_STRINGIFY_HELPER_(name, ...) u8###name
 #define GTEST_STRINGIFY_(...) GTEST_STRINGIFY_HELPER_(__VA_ARGS__, )
 
 namespace proto2 {
@@ -1547,7 +1547,7 @@ class NeverThrown {
   ::testing::TestInfo* const GTEST_TEST_CLASS_NAME_(test_suite_name,          \
                                                     test_name)::test_info_ =  \
       ::testing::internal::MakeAndRegisterTestInfo(                           \
-          #test_suite_name, #test_name, nullptr, nullptr,                     \
+          GTEST_UTF_8(#test_suite_name), GTEST_UTF_8(#test_name), nullptr, nullptr,       \
           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
           ::testing::internal::SuiteApiResolver<                              \
               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
