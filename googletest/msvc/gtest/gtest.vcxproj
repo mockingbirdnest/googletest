@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C8F6C172-56F2-4E76-B5FA-C3B423B31BE7}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)googletest.props" />
+  <ItemGroup>
+    <ClInclude Include="..\..\include\gtest\gtest_pred_impl.h" />
+    <ClInclude Include="..\..\include\gtest\gtest_prod.h" />
+    <ClInclude Include="..\..\include\gtest\gtest-assertion-result.h" />
+    <ClInclude Include="..\..\include\gtest\gtest-death-test.h" />
+    <ClInclude Include="..\..\include\gtest\gtest-matchers.h" />
+    <ClInclude Include="..\..\include\gtest\gtest-message.h" />
+    <ClInclude Include="..\..\include\gtest\gtest-param-test.h" />
+    <ClInclude Include="..\..\include\gtest\gtest-printers.h" />
+    <ClInclude Include="..\..\include\gtest\gtest-spi.h" />
+    <ClInclude Include="..\..\include\gtest\gtest-test-part.h" />
+    <ClInclude Include="..\..\include\gtest\gtest-typed-test.h" />
+    <ClInclude Include="..\..\include\gtest\gtest.h" />
+    <ClInclude Include="..\..\include\gtest\internal\custom\gtest-port.h" />
+    <ClInclude Include="..\..\include\gtest\internal\custom\gtest-printers.h" />
+    <ClInclude Include="..\..\include\gtest\internal\custom\gtest.h" />
+    <ClInclude Include="..\..\include\gtest\internal\gtest-death-test-internal.h" />
+    <ClInclude Include="..\..\include\gtest\internal\gtest-filepath.h" />
+    <ClInclude Include="..\..\include\gtest\internal\gtest-internal.h" />
+    <ClInclude Include="..\..\include\gtest\internal\gtest-param-util.h" />
+    <ClInclude Include="..\..\include\gtest\internal\gtest-port-arch.h" />
+    <ClInclude Include="..\..\include\gtest\internal\gtest-port.h" />
+    <ClInclude Include="..\..\include\gtest\internal\gtest-string.h" />
+    <ClInclude Include="..\..\include\gtest\internal\gtest-type-util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\gtest-all.cc" />
+    <ClCompile Include="..\..\src\gtest-assertion-result.cc" />
+    <ClCompile Include="..\..\src\gtest-death-test.cc" />
+    <ClCompile Include="..\..\src\gtest-filepath.cc" />
+    <ClCompile Include="..\..\src\gtest-internal-inl.h" />
+    <ClCompile Include="..\..\src\gtest-matchers.cc" />
+    <ClCompile Include="..\..\src\gtest-port.cc" />
+    <ClCompile Include="..\..\src\gtest-printers.cc" />
+    <ClCompile Include="..\..\src\gtest-test-part.cc" />
+    <ClCompile Include="..\..\src\gtest-typed-test.cc" />
+    <ClCompile Include="..\..\src\gtest.cc" />
+  </ItemGroup>
+</Project>

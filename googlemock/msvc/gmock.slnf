@@ -1,0 +1,9 @@
+{
+  "solution": {
+    "path": "gmock.sln",
+    "projects": [
+      "gmock\\gmock.vcxproj",
+      "gmock_main\\gmock_main.vcxproj",
+    ]
+  }
+}

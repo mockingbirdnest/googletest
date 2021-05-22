@@ -1,0 +1,9 @@
+{
+  "solution": {
+    "path": "gtest.sln",
+    "projects": [
+      "gtest\\gtest.vcxproj",
+      "gtest_main\\gtest_main.vcxproj",
+    ]
+  }
+}

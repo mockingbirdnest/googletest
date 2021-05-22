@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E4EF614B-30DF-4954-8C53-580A0BF6B589}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)googlemock.props" />
+  <ItemGroup>
+    <ClCompile Include="..\..\src\gmock_main.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gmock\gmock.vcxproj">
+      <Project>{34681f0d-ce45-415d-b5f2-5c662dfe3bd5}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

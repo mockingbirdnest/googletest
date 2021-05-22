@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{24848551-EF4F-47E8-9A9D-EA4D49BC3ECA}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)googletest.props" />
+  <ItemGroup>
+    <ClCompile Include="..\..\test\production.h" />
+    <ClCompile Include="..\..\test\gtest_prod_test.cc" />
+    <ClCompile Include="..\..\test\production.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\gtest_main\gtest_main.vcxproj">
+      <Project>{3af54c8a-10bf-4332-9147-f68ed9862032}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
