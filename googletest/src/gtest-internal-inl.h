@@ -405,7 +405,7 @@ class GTEST_API_ UnitTestOptions {
   // Returns EXCEPTION_EXECUTE_HANDLER if Google Test should handle the
   // given SEH exception, or EXCEPTION_CONTINUE_SEARCH otherwise.
   // This function is useful as an __except condition.
-  static int GTestShouldProcessSEH(DWORD exception_code);
+  static int GTestShouldProcessSEH(DWORD exception_code, std::string*& stack);
 #endif  // GTEST_OS_WINDOWS
 
   // Returns true if "name" matches the ':' separated list of glob-style

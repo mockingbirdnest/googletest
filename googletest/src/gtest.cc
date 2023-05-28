@@ -54,6 +54,8 @@
 #include <sstream>
 #include <vector>
 
+#include "glog/logging.h"
+
 #if GTEST_OS_LINUX
 
 # include <fcntl.h>  // NOLINT
@@ -758,7 +760,8 @@ bool UnitTestOptions::FilterMatchesTest(const std::string& test_suite_name,
 // Returns EXCEPTION_EXECUTE_HANDLER if Google Test should handle the
 // given SEH exception, or EXCEPTION_CONTINUE_SEARCH otherwise.
 // This function is useful as an __except condition.
-int UnitTestOptions::GTestShouldProcessSEH(DWORD exception_code) {
+int UnitTestOptions::GTestShouldProcessSEH(DWORD exception_code,
+                                           std::string*& stack) {
   // Google Test should handle a SEH exception if:
   //   1. the user wants it to, AND
   //   2. this is not a breakpoint exception, AND
@@ -777,6 +780,11 @@ int UnitTestOptions::GTestShouldProcessSEH(DWORD exception_code) {
     should_handle = false;
   else if (exception_code == kCxxExceptionCode)
     should_handle = false;
+
+  if (should_handle) {
+    stack = new std::string();
+    *stack = google::GetStackTrace();
+  }
 
   return should_handle ? EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH;
 }
@@ -2539,10 +2547,13 @@ bool Test::HasSameFixtureClass() {
 // prohibits creation of objects with destructors on stack in functions
 // using __try (see error C2712).
 static std::string* FormatSehExceptionMessage(DWORD exception_code,
-                                              const char* location) {
+                                              const char* location,
+                                              std::string const& stack) {
   Message message;
-  message << "SEH exception with code 0x" << std::setbase(16) <<
-    exception_code << std::setbase(10) << " thrown in " << location << ".";
+  message << "SEH exception with code 0x" << std::setbase(16) << exception_code
+          << std::setbase(10) << " thrown in " << location
+          << ".\n*** SEH exception stack trace: ***\n"
+          << stack;
 
   return new std::string(message.GetString());
 }
@@ -2588,18 +2599,20 @@ template <class T, typename Result>
 Result HandleSehExceptionsInMethodIfSupported(
     T* object, Result (T::*method)(), const char* location) {
 #if GTEST_HAS_SEH
+  std::string* stack = nullptr;
   __try {
     return (object->*method)();
   } __except (internal::UnitTestOptions::GTestShouldProcessSEH(  // NOLINT
-      GetExceptionCode())) {
+      GetExceptionCode(), stack)) {
     // We create the exception message on the heap because VC++ prohibits
     // creation of objects with destructors on stack in functions using __try
     // (see error C2712).
     std::string* exception_message = FormatSehExceptionMessage(
-        GetExceptionCode(), location);
+        GetExceptionCode(), location, *stack);
     internal::ReportFailureInUnknownLocation(TestPartResult::kFatalFailure,
                                              *exception_message);
     delete exception_message;
+    delete stack;
     return static_cast<Result>(0);
   }
 #else

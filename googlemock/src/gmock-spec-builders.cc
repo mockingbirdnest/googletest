@@ -44,6 +44,7 @@
 #include <string>
 #include <vector>
 
+#include "glog/logging.h"
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 #include "gtest/internal/gtest-port.h"
@@ -469,6 +470,9 @@ UntypedActionResultHolderBase* UntypedFunctionMockerBase::UntypedInvokeWith(
                : this->UntypedPerformAction(untyped_action, untyped_args);
   };
   auto handle_failures = [&] {
+    if (!found) {
+      ss << "\nStack trace:\n" << google::GetStackTrace();
+    }
     ss << "\n" << why.str();
 
     if (!found) {

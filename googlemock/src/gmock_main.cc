@@ -50,6 +50,33 @@ void loop() { RUN_ALL_TESTS(); }
 
 #else
 
+#if GTEST_OS_WINDOWS
+
+#include <windows.h>
+
+char* NewUTF8(const wchar_t* utf_16) {
+  int const size =
+      WideCharToMultiByte(CP_UTF8, /*dwFlags=*/0, utf_16, /*cchWideChar=*/-1,
+                          /*lpMultiByteStr=*/nullptr, /*cbMultiByte=*/0,
+                          /*lpDefaultChar=*/nullptr,
+                          /*lpUsedDefaultChar=*/nullptr);
+  char* result = new char[size];
+  WideCharToMultiByte(CP_UTF8, /*dwFlags=*/0, utf_16, /*cchWideChar=*/-1,
+                      /*lpMultiByteStr=*/result, /*cbMultiByte=*/size,
+                      /*lpDefaultChar=*/nullptr,
+                      /*lpUsedDefaultChar=*/nullptr);
+  return result;
+}
+
+void __cdecl HandleCRTInvalidParameter(const wchar_t* expression,
+                                       const wchar_t* function,
+                                       const wchar_t* file, unsigned int line,
+                                       uintptr_t pReserved) {
+  google::LogMessageFatal(NewUTF8(file), line).stream()
+      << NewUTF8(function) << ": " << NewUTF8(expression);
+}
+#endif
+
 // MS C++ compiler/linker has a bug on Windows (not on Windows CE), which
 // causes a link error when _tmain is defined in a static library and UNICODE
 // is enabled. For this reason instead of _tmain, main function is used on
@@ -65,6 +92,9 @@ GTEST_API_ int __cdecl main(int argc, char** argv) {
 #endif  // GTEST_OS_WINDOWS_MOBILE
   std::cout << "Running main() from gmock_main.cc\n";
   google::InitGoogleLogging(argv[0]);
+#if GTEST_OS_WINDOWS
+  _set_invalid_parameter_handler(&HandleCRTInvalidParameter);
+#endif
   // Since Google Mock depends on Google Test, InitGoogleMock() is
   // also responsible for initializing Google Test.  Therefore there's
   // no need for calling testing::InitGoogleTest() separately.
