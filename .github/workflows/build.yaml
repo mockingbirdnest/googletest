@@ -42,5 +42,6 @@ jobs:
       uses: mockingbirdnest/actions/windows/upload_artifact@main
       with:
         name: googletest
+        configuration: ${{ matrix.configuration }}
         headers_directory: ${{ env.PRINCIPIA_HEADERS_GOOGLETEST }}
         solution_directory: ${{ env.PRINCIPIA_MSVC_GOOGLETEST }}
