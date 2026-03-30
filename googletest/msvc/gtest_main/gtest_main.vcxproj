@@ -10,13 +10,10 @@
   </PropertyGroup>
   <Import Project="$(SolutionDir)googletest.props" />
   <ItemGroup>
-    <ClCompile Include="..\src\gtest_main.cc">
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
+    <ClCompile Include="..\..\src\gtest_main.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="gtest.vcxproj">
+    <ProjectReference Include="..\gtest\gtest.vcxproj">
       <Project>{c8f6c172-56f2-4e76-b5fa-c3b423b31be7}</Project>
     </ProjectReference>
   </ItemGroup>

@@ -7,7 +7,7 @@ $filtersheaders = "  <ItemGroup>`r`n"
 $vcxprojheaders = "  <ItemGroup>`r`n"
 Get-ChildItem "$dir\include\gtest\*" -Include *.h | `
 Foreach-Object {
-  $msvcrelativepath = $_.FullName -replace ".*include\\", "..\include\"
+  $msvcrelativepath = $_.FullName -replace ".*include\\", "..\..\include\"
   $filtersheaders +=
       "    <ClInclude Include=`"$msvcrelativepath`">`r`n" +
       "       <Filter>Header Files</Filter>`r`n" +
@@ -17,7 +17,7 @@ Foreach-Object {
 }
 Get-ChildItem "$dir\include\gtest\*\*" -Recurse -Include *.h | `
 Foreach-Object {
-  $msvcrelativepath = $_.FullName -replace ".*include\\", "..\include\"
+  $msvcrelativepath = $_.FullName -replace ".*include\\", "..\..\include\"
   $filtersheaders +=
       "    <ClInclude Include=`"$msvcrelativepath`">`r`n" +
       "       <Filter>Internal Files</Filter>`r`n" +
@@ -32,7 +32,7 @@ $filterssources = "  <ItemGroup>`r`n"
 $vcxprojsources = "  <ItemGroup>`r`n"
 Get-ChildItem "$dir\src\*" -Include *.h,*.cc -Exclude gtest_main.cc | `
 Foreach-Object {
-  $msvcrelativepath = $_.FullName -replace ".*src\\", "..\src\"
+  $msvcrelativepath = $_.FullName -replace ".*src\\", "..\..\src\"
   $filterssources +=
       "    <ClCompile Include=`"$msvcrelativepath`">`r`n" +
       "       <Filter>Source Files</Filter>`r`n" +
@@ -47,7 +47,7 @@ $filtersmsources = "  <ItemGroup>`r`n"
 $vcxprojmsources = "  <ItemGroup>`r`n"
 Get-ChildItem "$dir\src\*" -Include gtest_main.cc | `
 Foreach-Object {
-  $msvcrelativepath = $_.FullName -replace ".*src\\", "..\src\"
+  $msvcrelativepath = $_.FullName -replace ".*src\\", "..\..\src\"
   $filtersmsources +=
       "    <ClCompile Include=`"$msvcrelativepath`">`r`n" +
       "       <Filter>Source Files</Filter>`r`n" +
@@ -60,9 +60,9 @@ $vcxprojmsources += "  </ItemGroup>`r`n"
 
 $filterstests = "  <ItemGroup>`r`n"
 $vcxprojtests = "  <ItemGroup>`r`n"
-Get-ChildItem "$dir\test\*" -Include *_test.h | `
+Get-ChildItem "$dir\test\*" -Include *_test*.h,*-test*.h | `
 Foreach-Object {
-  $msvcrelativepath = $_.FullName -replace ".*test\\", "..\test\"
+  $msvcrelativepath = $_.FullName -replace ".*test\\", "..\..\test\"
   $filterstests +=
       "    <ClCompile Include=`"$msvcrelativepath`">`r`n" +
       "       <Filter>Header Files</Filter>`r`n" +
@@ -70,9 +70,9 @@ Foreach-Object {
   $vcxprojtests +=
       "    <ClCompile Include=`"$msvcrelativepath`" />`r`n"
 }
-Get-ChildItem "$dir\test\*" -Include *_test.cc -Exclude *prod*.h,*prod*.cc | `
+Get-ChildItem "$dir\test\*" -Include *_test*.cc,*-test*.cc,*unittest*.cc -Exclude *prod*.h,*prod*.cc | `
 Foreach-Object {
-  $msvcrelativepath = $_.FullName -replace ".*test\\", "..\test\"
+  $msvcrelativepath = $_.FullName -replace ".*test\\", "..\..\test\"
   $filterstests +=
       "    <ClCompile Include=`"$msvcrelativepath`">`r`n" +
       "       <Filter>Source Files</Filter>`r`n" +
@@ -87,7 +87,7 @@ $filtersptests = "  <ItemGroup>`r`n"
 $vcxprojptests = "  <ItemGroup>`r`n"
 Get-ChildItem "$dir\test\*" -Include *prod*.h | `
 Foreach-Object {
-  $msvcrelativepath = $_.FullName -replace ".*test\\", "..\test\"
+  $msvcrelativepath = $_.FullName -replace ".*test\\", "..\..\test\"
   $filtersptests +=
       "    <ClCompile Include=`"$msvcrelativepath`">`r`n" +
       "       <Filter>Header Files</Filter>`r`n" +
@@ -97,7 +97,7 @@ Foreach-Object {
 }
 Get-ChildItem "$dir\test\*" -Include *prod*.cc | `
 Foreach-Object {
-  $msvcrelativepath = $_.FullName -replace ".*test\\", "..\test\"
+  $msvcrelativepath = $_.FullName -replace ".*test\\", "..\..\test\"
   $filtersptests +=
       "    <ClCompile Include=`"$msvcrelativepath`">`r`n" +
       "       <Filter>Source Files</Filter>`r`n" +
