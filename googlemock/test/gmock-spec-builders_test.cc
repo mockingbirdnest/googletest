@@ -2588,7 +2588,7 @@ TEST(ParameterlessExpectationsTest,
 }  // namespace
 }  // namespace testing
 
-int main(int argc, char** argv) {
+int __cdecl main(int argc, char** argv) {
   testing::InitGoogleMock(&argc, argv);
   // Ensures that the tests pass no matter what value of
   // --gmock_catch_leaked_mocks and --gmock_verbose the user specifies.
