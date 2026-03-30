@@ -21,12 +21,9 @@
 
   <!--Definitions.-->
   <PropertyGroup>
-    <!--Dependency paths.-->
-    <PrincipiaDependencyConfiguration>Debug</PrincipiaDependencyConfiguration>
-    <PrincipiaDependencyConfiguration Condition="$(PrincipiaOptimize)">Release</PrincipiaDependencyConfiguration>
     <!--Special projects.  Must default to true for Clang Power Tools to get the includes right.-->
     <PrincipiaBenchmarkProject>true</PrincipiaBenchmarkProject>
-    <PrincipiaBenchmarkProject Condition="$(ProjectName) != no-such-project">false</PrincipiaBenchmarkProject>
+    <PrincipiaBenchmarkProject Condition="$(ProjectName) != no_such_project">false</PrincipiaBenchmarkProject>
     <PrincipiaTestProject>true</PrincipiaTestProject>
     <PrincipiaTestProject Condition="$(ProjectName) != gtest_unittest and
                                      $(ProjectName) != gtest_prod_test">false</PrincipiaTestProject>
@@ -35,6 +32,9 @@
     <PrincipiaMainProject Condition="$(PrincipiaBenchmarkProject) or $(PrincipiaTestProject)">true</PrincipiaMainProject>
     <PrincipiaOptimize>false</PrincipiaOptimize>
     <PrincipiaOptimize Condition="$(Configuration.StartsWith('Release'))">true</PrincipiaOptimize>
+    <!--Dependency paths.-->
+    <PrincipiaDependencyConfiguration>Debug</PrincipiaDependencyConfiguration>
+    <PrincipiaDependencyConfiguration Condition="$(PrincipiaOptimize)">Release</PrincipiaDependencyConfiguration>
   </PropertyGroup>
 
   <!--Compiler.-->
