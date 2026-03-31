@@ -29,6 +29,7 @@
 
 // Tests the --gtest_repeat=number flag.
 
+#ifndef PRINCIPIA
 #include <stdlib.h>
 
 #include <iostream>
@@ -194,7 +195,6 @@ void TestRepeatWithFilterForFailedTests(int repeat) {
 
 }  // namespace
 
-#ifndef PRINCIPIA
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
 

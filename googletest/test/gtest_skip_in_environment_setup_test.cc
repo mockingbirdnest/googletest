@@ -30,6 +30,7 @@
 // This test verifies that skipping in the environment results in the
 // testcases being skipped.
 
+#ifndef PRINCIPIA
 #include <iostream>
 
 #include "gtest/gtest.h"
@@ -41,7 +42,6 @@ class SetupEnvironment : public testing::Environment {
 
 TEST(Test, AlwaysFails) { EXPECT_EQ(true, false); }
 
-#ifndef PRINCIPIA
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
 

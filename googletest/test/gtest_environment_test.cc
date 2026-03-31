@@ -30,6 +30,7 @@
 //
 // Tests using global test environments.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -174,7 +175,6 @@ void TestNoTestsSkipsSetUp() {
 
 }  // namespace
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
 

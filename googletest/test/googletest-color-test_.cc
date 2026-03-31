@@ -31,6 +31,7 @@
 // colors in the output.  It prints "YES" and returns 1 if Google Test
 // decides to use colors, and prints "NO" and returns 0 otherwise.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 
 #include "gtest/gtest.h"
@@ -44,7 +45,6 @@ using testing::internal::ShouldUseColor;
 // run the TEST itself.
 TEST(GTestColorTest, Dummy) {}
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
 

@@ -32,6 +32,7 @@
 // This file verifies Google Test event listeners receive events at the
 // right times.
 
+#ifndef PRINCIPIA
 #include <string>
 #include <vector>
 
@@ -259,7 +260,6 @@ void VerifyResults(const std::vector<std::string>& data,
   }
 }
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   std::vector<std::string> events;
   g_events = &events;

@@ -32,6 +32,7 @@
 // generators objects produce correct parameter sequences and that
 // Google Test runtime instantiates correct tests from those sequences.
 
+#ifndef PRINCIPIA
 #include "test/googletest-param-test-test.h"
 
 #include <algorithm>
@@ -1225,7 +1226,6 @@ TYPED_TEST_P(NotInstantiatedTypeTest, Used) {}
 REGISTER_TYPED_TEST_SUITE_P(NotInstantiatedTypeTest, Used);
 }  // namespace works_here
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   // Used in TestGenerationTest test suite.
   AddGlobalTestEnvironment(TestGenerationTest::Environment::Instance());

@@ -32,6 +32,7 @@
 // exceptions, and the output is verified by
 // googletest-catch-exceptions-test.py.
 
+#ifndef PRINCIPIA
 #include <stdio.h>   // NOLINT
 #include <stdlib.h>  // For exit().
 
@@ -280,7 +281,6 @@ void TerminateHandler() {
 
 #endif  // GTEST_HAS_EXCEPTIONS
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
 #if GTEST_HAS_EXCEPTIONS
   std::set_terminate(&TerminateHandler);

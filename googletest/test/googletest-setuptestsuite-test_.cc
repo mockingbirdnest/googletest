@@ -27,6 +27,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#ifndef PRINCIPIA  // Fails intentionally.
 #include "gtest/gtest.h"
 
 class SetupFailTest : public ::testing::Test {
@@ -42,3 +43,4 @@ class TearDownFailTest : public ::testing::Test {
 };
 
 TEST_F(TearDownFailTest, NoopPassingTest) {}
+#endif

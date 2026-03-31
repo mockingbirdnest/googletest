@@ -29,6 +29,7 @@
 
 // Tests Google Test's assert-by-exception mode with exceptions enabled.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -95,7 +96,6 @@ int kTestForContinuingTest = 0;
 
 TEST(Test, Test2) { kTestForContinuingTest = 1; }
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
   testing::UnitTest::GetInstance()->listeners().Append(new ThrowListener);

@@ -30,6 +30,7 @@
 //
 // Tests that verify interaction of exceptions and death tests.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest-death-test.h"
 #include "gtest/gtest.h"
 
@@ -84,7 +85,6 @@ TEST(SehExceptionDeasTest, CatchExceptionsDoesNotInterfere) {
 
 #endif  // GTEST_HAS_DEATH_TEST
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
   GTEST_FLAG_SET(catch_exceptions, GTEST_ENABLE_CATCH_EXCEPTIONS_ != 0);

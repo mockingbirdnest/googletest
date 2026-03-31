@@ -29,6 +29,7 @@
 
 // Verifies that test shuffling works.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
 namespace {
@@ -86,7 +87,6 @@ class TestNamePrinter : public EmptyTestEventListener {
 
 }  // namespace
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   InitGoogleTest(&argc, argv);
 

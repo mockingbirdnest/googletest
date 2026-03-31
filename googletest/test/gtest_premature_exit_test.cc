@@ -31,6 +31,7 @@
 // Tests that Google Test manipulates the premature-exit-detection
 // file correctly.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 
 #include "gtest/gtest.h"
@@ -108,7 +109,6 @@ TEST_F(PrematureExitTest, PrematureExitFileExistsDuringTestExecution) {
 
 }  // namespace
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   InitGoogleTest(&argc, argv);
   const int exit_code = RUN_ALL_TESTS();

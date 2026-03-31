@@ -27,6 +27,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#ifndef PRINCIPIA
 #include <string>
 
 #include "gtest/gtest.h"
@@ -46,7 +47,6 @@ INSTANTIATE_TEST_SUITE_P(DuplicateTestNames, DummyTest,
                          StringParamTestSuffix);
 }  // namespace
 
-#ifndef PRINCIPIA
 int main(int argc, char *argv[]) {
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

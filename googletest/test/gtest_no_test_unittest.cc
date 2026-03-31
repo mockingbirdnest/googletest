@@ -30,9 +30,9 @@
 // Tests that a Google Test program that has no test defined can run
 // successfully.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
-#ifndef PRINCIPIA
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
 

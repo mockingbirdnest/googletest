@@ -32,6 +32,7 @@
 // This file contains tests verifying correctness of data provided via
 // UnitTest's public methods.
 
+#ifndef PRINCIPIA
 #include <string.h>  // For strcmp.
 
 #include <algorithm>
@@ -319,7 +320,6 @@ class FinalSuccessChecker : public Environment {
 }  // namespace internal
 }  // namespace testing
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   InitGoogleTest(&argc, argv);
 

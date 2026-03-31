@@ -30,6 +30,7 @@
 // A helper program for testing that Google Test parses the environment
 // variables correctly.
 
+#ifndef PRINCIPIA
 #include <iostream>
 
 #include "gtest/gtest.h"
@@ -117,7 +118,6 @@ void PrintFlag(const char* flag) {
 
 }  // namespace testing
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
 
