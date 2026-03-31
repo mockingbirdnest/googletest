@@ -120,8 +120,6 @@
   <!--Import our property sheets.-->
   <ImportGroup Label="PropertySheets">
     <Import Project="$(SolutionDir)portability_macros.props"/>
-    <Import Project="$(SolutionDir)..\..\..\abseil-cpp\msvc\portability_macros.props" />
-    <Import Project="$(SolutionDir)google_abseil-cpp.props" />
   </ImportGroup>
 
   <!--This import must be at the end.-->
