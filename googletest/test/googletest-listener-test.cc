@@ -32,6 +32,7 @@
 // This file verifies Google Test event listeners receive events at the
 // right times.
 
+#ifndef PRINCIPIA
 #include <string>
 #include <vector>
 
@@ -507,3 +508,4 @@ int main(int argc, char** argv) {
 
   return ret_val;
 }
+#endif  // PRINCIPIA

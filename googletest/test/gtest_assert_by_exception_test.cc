@@ -29,6 +29,7 @@
 
 // Tests Google Test's assert-by-exception mode with exceptions enabled.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -110,3 +111,4 @@ int main(int argc, char** argv) {
   }
   return 0;
 }
+#endif  // PRINCIPIA

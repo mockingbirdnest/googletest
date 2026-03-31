@@ -29,6 +29,7 @@
 
 // Tests Google Test's throw-on-failure mode with exceptions enabled.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -88,3 +89,4 @@ int main(int argc, char** argv) {
   TestFailureThrowsRuntimeError();
   return 0;
 }
+#endif  // PRINCIPIA

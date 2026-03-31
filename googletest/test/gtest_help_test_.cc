@@ -29,6 +29,7 @@
 
 // This program is meant to be run by gtest_help_test.py.  Do not run
 // it directly.
+#ifndef PRINCIPIA
 
 #include "gtest/gtest.h"
 
@@ -42,3 +43,5 @@ TEST(HelpFlagTest, ShouldNotBeRun) {
 #ifdef GTEST_HAS_DEATH_TEST
 TEST(DeathTest, UsedByPythonScriptToDetectSupportForDeathTestsInThisBinary) {}
 #endif
+
+#endif  // PRINCIPIA

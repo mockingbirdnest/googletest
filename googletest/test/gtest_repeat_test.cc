@@ -29,6 +29,7 @@
 
 // Tests the --gtest_repeat=number flag.
 
+#ifndef PRINCIPIA
 #include <stdlib.h>
 
 #include <iostream>
@@ -218,3 +219,4 @@ int main(int argc, char **argv) {
   printf("PASS\n");
   return 0;
 }
+#endif  // PRINCIPIA

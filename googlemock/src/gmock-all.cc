@@ -34,6 +34,7 @@
 // purpose is to allow a user to build Google Mock by compiling this
 // file alone.
 
+#ifndef PRINCIPIA
 // This line ensures that gmock.h can be compiled on its own, even
 // when it's fused.
 #include "gmock/gmock.h"
@@ -44,3 +45,4 @@
 #include "src/gmock-matchers.cc"
 #include "src/gmock-spec-builders.cc"
 #include "src/gmock.cc"
+#endif  // PRINCIPIA

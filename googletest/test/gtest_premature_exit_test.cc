@@ -31,6 +31,7 @@
 // Tests that Google Test manipulates the premature-exit-detection
 // file correctly.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 
 #include "gtest/gtest.h"
@@ -126,3 +127,4 @@ int main(int argc, char** argv) {
 
   return exit_code;
 }
+#endif  // PRINCIPIA

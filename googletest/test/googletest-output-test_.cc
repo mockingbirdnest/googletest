@@ -33,6 +33,7 @@
 // desired messages.  Therefore, most tests in this file are MEANT TO
 // FAIL.
 
+#ifndef PRINCIPIA
 #include <stdlib.h>
 
 #include <algorithm>
@@ -1056,3 +1057,4 @@ int main(int argc, char** argv) {
   GTEST_DISABLE_MSC_WARNINGS_POP_()  //  4127
   return RunAllTests();
 }
+#endif  // PRINCIPIA

@@ -37,6 +37,7 @@
 // directly.
 // clang-format off
 
+#ifndef PRINCIPIA
 #include <string>
 
 #include "gtest/gtest.h"
@@ -213,5 +214,6 @@ int main(int argc, char** argv) {
   testing::Test::RecordProperty("ad_hoc_property", "42");
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA
 
 // clang-format on

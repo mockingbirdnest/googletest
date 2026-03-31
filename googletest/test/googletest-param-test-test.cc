@@ -32,6 +32,7 @@
 // generators objects produce correct parameter sequences and that
 // Google Test runtime instantiates correct tests from those sequences.
 
+#ifndef PRINCIPIA
 #include "test/googletest-param-test-test.h"
 
 #include <algorithm>
@@ -1241,3 +1242,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

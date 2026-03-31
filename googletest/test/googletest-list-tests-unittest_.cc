@@ -36,6 +36,7 @@
 // This program will be invoked from a Python unit test.
 // Don't run it directly.
 
+#ifndef PRINCIPIA
 #include <ostream>
 #include <string>
 
@@ -141,3 +142,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

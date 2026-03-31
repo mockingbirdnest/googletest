@@ -30,6 +30,7 @@
 // gtest_xml_outfile2_test_ writes some xml via TestProperty used by
 // gtest_xml_outfiles_test.py
 
+#ifndef PRINCIPIA
 #include <atomic>
 
 #include "gtest/gtest.h"
@@ -75,3 +76,4 @@ TEST_F(PropertyTwo, TestInt64ConvertibleProperties) {
   std::atomic<int> atomic_int_prop(10);
   RecordProperty("TestAtomicIntProperty", atomic_int_prop);
 }
+#endif  // PRINCIPIA

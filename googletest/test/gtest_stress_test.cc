@@ -30,6 +30,7 @@
 // Tests that SCOPED_TRACE() and various Google Test assertions can be
 // used in a large number of threads concurrently.
 
+#ifndef PRINCIPIA
 #include <algorithm>
 #include <memory>
 #include <string>
@@ -243,3 +244,4 @@ int main(int argc, char **argv) {
   return RUN_ALL_TESTS();
 }
 #endif  // GTEST_IS_THREADSAFE
+#endif  // PRINCIPIA

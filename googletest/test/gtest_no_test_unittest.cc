@@ -30,6 +30,7 @@
 // Tests that a Google Test program that has no test defined can run
 // successfully.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
 int main(int argc, char **argv) {
@@ -52,3 +53,4 @@ int main(int argc, char **argv) {
   // The above EXPECT_EQ() should cause RUN_ALL_TESTS() to return non-zero.
   return RUN_ALL_TESTS() ? 0 : 1;
 }
+#endif  // PRINCIPIA

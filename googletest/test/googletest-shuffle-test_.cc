@@ -29,6 +29,7 @@
 
 // Verifies that test shuffling works.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
 namespace {
@@ -97,3 +98,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

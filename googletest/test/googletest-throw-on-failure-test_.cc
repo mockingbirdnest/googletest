@@ -33,6 +33,7 @@
 // invoked by googletest-throw-on-failure-test.py, and is expected to exit
 // with non-zero in the throw-on-failure mode or 0 otherwise.
 
+#ifndef PRINCIPIA
 #include <stdio.h>   // for fflush, fprintf, NULL, etc.
 #include <stdlib.h>  // for exit
 
@@ -69,3 +70,4 @@ int main(int argc, char** argv) {
   // here.
   return 0;
 }
+#endif  // PRINCIPIA

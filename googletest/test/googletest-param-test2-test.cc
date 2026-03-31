@@ -31,6 +31,8 @@
 // Tests for Google Test itself.  This verifies that the basic constructs of
 // Google Test work.
 
+// Related to googletest-param-test-test.cc.
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 #include "test/googletest-param-test-test.h"
 
@@ -56,3 +58,4 @@ INSTANTIATE_TEST_SUITE_P(MultiplesOf33, ExternalInstantiationTest,
 // gtest-param-test_test.h
 INSTANTIATE_TEST_SUITE_P(Sequence2, InstantiationInMultipleTranslationUnitsTest,
                          Values(42 * 3, 42 * 4, 42 * 5));
+#endif  // PRINCIPIA

@@ -32,6 +32,7 @@
 // The program will be invoked from a Python unit test.  Don't run it
 // directly.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
 namespace {
@@ -56,3 +57,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

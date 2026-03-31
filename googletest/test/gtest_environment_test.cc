@@ -30,6 +30,7 @@
 //
 // Tests using global test environments.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -185,3 +186,4 @@ int main(int argc, char** argv) {
   printf("PASS\n");
   return 0;
 }
+#endif  // PRINCIPIA

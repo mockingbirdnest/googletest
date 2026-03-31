@@ -30,6 +30,7 @@
 // This test verifies that skipping in the environment results in the
 // testcases being skipped.
 
+#ifndef PRINCIPIA
 #include <iostream>
 
 #include "gtest/gtest.h"
@@ -48,3 +49,4 @@ int main(int argc, char **argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

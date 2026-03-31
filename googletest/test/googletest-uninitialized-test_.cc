@@ -27,6 +27,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
 TEST(DummyTest, Dummy) {
@@ -37,3 +38,4 @@ TEST(DummyTest, Dummy) {
 }
 
 int main() { return RUN_ALL_TESTS(); }
+#endif  // PRINCIPIA

@@ -32,6 +32,7 @@
 // exceptions, and the output is verified by
 // googletest-catch-exceptions-test.py.
 
+#ifndef PRINCIPIA
 #include <stdio.h>   // NOLINT
 #include <stdlib.h>  // For exit().
 
@@ -287,3 +288,4 @@ int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

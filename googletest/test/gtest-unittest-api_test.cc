@@ -32,6 +32,7 @@
 // This file contains tests verifying correctness of data provided via
 // UnitTest's public methods.
 
+#ifndef PRINCIPIA
 #include <string.h>  // For strcmp.
 
 #include <algorithm>
@@ -326,3 +327,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

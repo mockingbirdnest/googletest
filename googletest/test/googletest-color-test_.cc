@@ -31,6 +31,7 @@
 // colors in the output.  It prints "YES" and returns 1 if Google Test
 // decides to use colors, and prints "NO" and returns 0 otherwise.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 
 #include "gtest/gtest.h"
@@ -58,3 +59,4 @@ int main(int argc, char** argv) {
     return 0;
   }
 }
+#endif  // PRINCIPIA

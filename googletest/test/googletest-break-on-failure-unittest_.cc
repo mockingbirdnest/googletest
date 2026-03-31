@@ -37,6 +37,7 @@
 // This program will be invoked from a Python unit test.  It is
 // expected to fail.  Don't run it directly.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
 #ifdef GTEST_OS_WINDOWS
@@ -81,3 +82,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA
