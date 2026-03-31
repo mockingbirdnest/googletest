@@ -36,17 +36,22 @@
 #include "gtest/gtest-spi.h"
 #include "gtest/gtest.h"
 
+// NOTE(phl): For some reason, the name "Mock" is causing the tests that use it
+// to die trying to append to a vector that's in the boonnies.  Just don't use
+// that name.
+#define PRINCIPIA_MOCK Fock
+
 // This must not be defined inside the ::testing namespace, or it will
 // clash with ::testing::Mock.
-class Mock {
+class PRINCIPIA_MOCK {
  public:
-  Mock() = default;
+  PRINCIPIA_MOCK() = default;
 
   MOCK_METHOD0(DoThis, void());
 
  private:
-  Mock(const Mock&) = delete;
-  Mock& operator=(const Mock&) = delete;
+  PRINCIPIA_MOCK(const PRINCIPIA_MOCK&) = delete;
+  PRINCIPIA_MOCK& operator=(const PRINCIPIA_MOCK&) = delete;
 };
 
 namespace testing {
@@ -305,7 +310,7 @@ TEST(NiceMockTest, MoveOnlyConstructor) {
 // Tests that NiceMock<Mock> compiles where Mock is a user-defined
 // class (as opposed to ::testing::Mock).
 TEST(NiceMockTest, AcceptsClassNamedMock) {
-  NiceMock< ::Mock> nice;
+  NiceMock< ::PRINCIPIA_MOCK> nice;
   EXPECT_CALL(nice, DoThis());
   nice.DoThis();
 }
@@ -415,7 +420,7 @@ TEST(NaggyMockTest, MoveOnlyConstructor) {
 // Tests that NaggyMock<Mock> compiles where Mock is a user-defined
 // class (as opposed to ::testing::Mock).
 TEST(NaggyMockTest, AcceptsClassNamedMock) {
-  NaggyMock< ::Mock> naggy;
+  NaggyMock< ::PRINCIPIA_MOCK> naggy;
   EXPECT_CALL(naggy, DoThis());
   naggy.DoThis();
 }
@@ -515,7 +520,7 @@ TEST(StrictMockTest, MoveOnlyConstructor) {
 // Tests that StrictMock<Mock> compiles where Mock is a user-defined
 // class (as opposed to ::testing::Mock).
 TEST(StrictMockTest, AcceptsClassNamedMock) {
-  StrictMock< ::Mock> strict;
+  StrictMock< ::PRINCIPIA_MOCK> strict;
   EXPECT_CALL(strict, DoThis());
   strict.DoThis();
 }
