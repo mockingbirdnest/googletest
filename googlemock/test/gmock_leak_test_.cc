@@ -32,6 +32,7 @@
 // This program is for verifying that a leaked mock object can be
 // caught by Google Mock's leak detector.
 
+#ifndef PRINCIPIA
 #include "gmock/gmock.h"
 
 namespace {
@@ -97,3 +98,4 @@ TEST(LeakTest, CatchesMultipleLeakedMockObjects) {
 }
 
 }  // namespace
+#endif  // PRINCIPIA
