@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{34681F0D-CE45-415D-B5F2-5C662DFE3BD5}</ProjectGuid>
+    <RootNamespace>gmock</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)googlemock.props" />
+  <ItemGroup>
+    <ClCompile Include="..\src\gmock-cardinalities.cc" />
+    <ClCompile Include="..\src\gmock-internal-utils.cc" />
+    <ClCompile Include="..\src\gmock-matchers.cc" />
+    <ClCompile Include="..\src\gmock-spec-builders.cc" />
+    <ClCompile Include="..\src\gmock.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\gmock\gmock-actions.h" />
+    <ClInclude Include="..\include\gmock\gmock-cardinalities.h" />
+    <ClInclude Include="..\include\gmock\gmock-generated-actions.h" />
+    <ClInclude Include="..\include\gmock\gmock-generated-function-mockers.h" />
+    <ClInclude Include="..\include\gmock\gmock-generated-matchers.h" />
+    <ClInclude Include="..\include\gmock\gmock-generated-nice-strict.h" />
+    <ClInclude Include="..\include\gmock\gmock-matchers.h" />
+    <ClInclude Include="..\include\gmock\gmock-more-actions.h" />
+    <ClInclude Include="..\include\gmock\gmock-more-matchers.h" />
+    <ClInclude Include="\..\include\gmock\gmock-spec-builders.h" />
+    <ClInclude Include="\..\include\gmock\gmock.h" />
+    <ClInclude Include="..\include\gmock\internal\gmock-generated-internal-utils.h" />
+    <ClInclude Include="..\include\gmock\internal\gmock-internal-utils.h" />
+    <ClInclude Include="..\include\gmock\internal\gmock-port.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
