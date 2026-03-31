@@ -65,7 +65,6 @@
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)..;$(SolutionDir)..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 /bigobj</AdditionalOptions>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CallingConvention>vectorcall</CallingConvention>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4018;4068;4101;4180;4244;4267;4723;4996;5260;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -92,6 +91,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="!$(PrincipiaOptimize)">
     <ClCompile>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
