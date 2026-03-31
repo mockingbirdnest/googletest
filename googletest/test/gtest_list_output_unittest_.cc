@@ -70,8 +70,10 @@ typedef testing::Types<int, bool> TypeParameterizedTestSuiteTypes;  // NOLINT
 INSTANTIATE_TYPED_TEST_SUITE_P(Single, TypeParameterizedTestSuite,
                                TypeParameterizedTestSuiteTypes);
 
+#ifndef PRINCIPIA
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

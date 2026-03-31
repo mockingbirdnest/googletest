@@ -80,6 +80,7 @@
 // unit.
 THOUSAND_TESTS_(T)
 
+#ifndef PRINCIPIA
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
 
@@ -87,3 +88,4 @@ int main(int argc, char **argv) {
   // ensure that they compile.
   return 0;
 }
+#endif  // PRINCIPIA

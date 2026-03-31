@@ -224,6 +224,7 @@ TEST(NonFatalFailureOnAllThreadsTest, ExpectNonFatalFailureOnAllThreads) {
 }  // namespace
 }  // namespace testing
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
 
@@ -233,6 +234,7 @@ int main(int argc, char** argv) {
   printf("\nPASS\n");
   return 0;
 }
+#endif  // PRINCIPIA
 
 #else
 TEST(StressTest,

@@ -159,8 +159,10 @@ TEST(HasSkipTest, Test4) { FAIL() << "Expected failure."; }
 
 }  // namespace
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
   ::testing::UnitTest::GetInstance()->listeners().Append(new MyTestListener());
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

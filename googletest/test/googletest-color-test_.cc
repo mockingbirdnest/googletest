@@ -44,6 +44,7 @@ using testing::internal::ShouldUseColor;
 // run the TEST itself.
 TEST(GTestColorTest, Dummy) {}
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
 
@@ -58,3 +59,4 @@ int main(int argc, char** argv) {
     return 0;
   }
 }
+#endif  // PRINCIPIA

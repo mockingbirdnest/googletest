@@ -280,6 +280,7 @@ void TerminateHandler() {
 
 #endif  // GTEST_HAS_EXCEPTIONS
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
 #if GTEST_HAS_EXCEPTIONS
   std::set_terminate(&TerminateHandler);
@@ -287,3 +288,4 @@ int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

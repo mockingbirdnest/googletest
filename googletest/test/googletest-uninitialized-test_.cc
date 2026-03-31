@@ -36,4 +36,6 @@ TEST(DummyTest, Dummy) {
   // testing::InitGoogleTest() being called first.
 }
 
+#ifndef PRINCIPIA
 int main() { return RUN_ALL_TESTS(); }
+#endif  // PRINCIPIA

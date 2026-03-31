@@ -49,6 +49,7 @@ void TerminateHandler() {
   exit(1);
 }
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
 #if GTEST_HAS_EXCEPTIONS
   std::set_terminate(&TerminateHandler);
@@ -69,3 +70,4 @@ int main(int argc, char** argv) {
   // here.
   return 0;
 }
+#endif  // PRINCIPIA

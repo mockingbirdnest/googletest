@@ -117,6 +117,7 @@ void PrintFlag(const char* flag) {
 
 }  // namespace testing
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
 
@@ -128,3 +129,4 @@ int main(int argc, char** argv) {
   testing::PrintFlag(argv[1]);
   return 0;
 }
+#endif  // PRINCIPIA

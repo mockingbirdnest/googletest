@@ -259,6 +259,7 @@ void VerifyResults(const std::vector<std::string>& data,
   }
 }
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   std::vector<std::string> events;
   g_events = &events;
@@ -507,3 +508,4 @@ int main(int argc, char** argv) {
 
   return ret_val;
 }
+#endif  // PRINCIPIA

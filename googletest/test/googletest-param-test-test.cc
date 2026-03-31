@@ -1225,6 +1225,7 @@ TYPED_TEST_P(NotInstantiatedTypeTest, Used) {}
 REGISTER_TYPED_TEST_SUITE_P(NotInstantiatedTypeTest, Used);
 }  // namespace works_here
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   // Used in TestGenerationTest test suite.
   AddGlobalTestEnvironment(TestGenerationTest::Environment::Instance());
@@ -1241,3 +1242,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

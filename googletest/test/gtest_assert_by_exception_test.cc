@@ -95,6 +95,7 @@ int kTestForContinuingTest = 0;
 
 TEST(Test, Test2) { kTestForContinuingTest = 1; }
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
   testing::UnitTest::GetInstance()->listeners().Append(new ThrowListener);
@@ -110,3 +111,4 @@ int main(int argc, char** argv) {
   }
   return 0;
 }
+#endif  // PRINCIPIA

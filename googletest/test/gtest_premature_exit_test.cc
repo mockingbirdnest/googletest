@@ -108,6 +108,7 @@ TEST_F(PrematureExitTest, PrematureExitFileExistsDuringTestExecution) {
 
 }  // namespace
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   InitGoogleTest(&argc, argv);
   const int exit_code = RUN_ALL_TESTS();
@@ -126,3 +127,4 @@ int main(int argc, char** argv) {
 
   return exit_code;
 }
+#endif  // PRINCIPIA

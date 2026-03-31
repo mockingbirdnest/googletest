@@ -136,8 +136,10 @@ REGISTER_TYPED_TEST_SUITE_P(TypeParamTest, TestA, TestB);
 
 INSTANTIATE_TYPED_TEST_SUITE_P(My, TypeParamTest, MyTypes);
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

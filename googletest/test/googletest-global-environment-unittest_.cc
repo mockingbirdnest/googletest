@@ -51,8 +51,10 @@ TEST(SomeTest, DoesFoo) { FAIL() << "Unexpected call"; }
 
 }  // namespace
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

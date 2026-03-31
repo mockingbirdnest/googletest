@@ -76,6 +76,7 @@ void TestFailureThrowsRuntimeError() {
   Fail("A failed assertion should've thrown but didn't.");
 }
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
 
@@ -88,3 +89,4 @@ int main(int argc, char** argv) {
   TestFailureThrowsRuntimeError();
   return 0;
 }
+#endif  // PRINCIPIA

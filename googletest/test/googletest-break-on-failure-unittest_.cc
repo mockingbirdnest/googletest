@@ -59,6 +59,7 @@ ExitWithExceptionCode(struct _EXCEPTION_POINTERS* exception_pointers) {
 
 }  // namespace
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
 #ifdef GTEST_OS_WINDOWS
   // Suppresses display of the Windows error dialog upon encountering
@@ -81,3 +82,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

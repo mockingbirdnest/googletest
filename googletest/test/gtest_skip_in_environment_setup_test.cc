@@ -41,6 +41,7 @@ class SetupEnvironment : public testing::Environment {
 
 TEST(Test, AlwaysFails) { EXPECT_EQ(true, false); }
 
+#ifndef PRINCIPIA
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
 
@@ -48,3 +49,4 @@ int main(int argc, char **argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA

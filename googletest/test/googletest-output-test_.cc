@@ -1018,6 +1018,7 @@ TEST_F(TestSuiteThatSkipsInSetUp, ShouldNotRun) { std::abort(); }
 // The idea is to use Google Test to run all the tests we have defined (some
 // of them are intended to fail), and then compare the test results
 // with the "golden" file.
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   GTEST_FLAG_SET(print_time, false);
 
@@ -1056,3 +1057,4 @@ int main(int argc, char** argv) {
   GTEST_DISABLE_MSC_WARNINGS_POP_()  //  4127
   return RunAllTests();
 }
+#endif  // PRINCIPIA

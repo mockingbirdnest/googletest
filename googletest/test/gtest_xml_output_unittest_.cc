@@ -203,6 +203,7 @@ typedef testing::Types<int, long> TypeParameterizedTestSuiteTypes;  // NOLINT
 INSTANTIATE_TYPED_TEST_SUITE_P(Single, TypeParameterizedTestSuite,
                                TypeParameterizedTestSuiteTypes);
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   InitGoogleTest(&argc, argv);
 
@@ -213,5 +214,6 @@ int main(int argc, char** argv) {
   testing::Test::RecordProperty("ad_hoc_property", "42");
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA
 
 // clang-format on

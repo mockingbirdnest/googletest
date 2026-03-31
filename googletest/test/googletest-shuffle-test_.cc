@@ -86,6 +86,7 @@ class TestNamePrinter : public EmptyTestEventListener {
 
 }  // namespace
 
+#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   InitGoogleTest(&argc, argv);
 
@@ -97,3 +98,4 @@ int main(int argc, char** argv) {
 
   return RUN_ALL_TESTS();
 }
+#endif  // PRINCIPIA
