@@ -271,11 +271,11 @@ enum LogSeverity { kInfo = 0, kWarning = 1 };
 // Valid values for the --gmock_verbose flag.
 
 // All logs (informational and warnings) are printed.
-const char kInfoVerbosity[] = "info";
+inline const char kInfoVerbosity[] = "info";
 // Only warnings are printed.
-const char kWarningVerbosity[] = "warning";
+inline const char kWarningVerbosity[] = "warning";
 // No logs are printed.
-const char kErrorVerbosity[] = "error";
+inline const char kErrorVerbosity[] = "error";
 
 // Returns true if and only if a log with the given severity is visible
 // according to the --gmock_verbose flag.

@@ -54,7 +54,7 @@ namespace testing {
 namespace internal {
 
 // Name of the flag (needed for parsing Google Test flag).
-const char kInternalRunDeathTestFlag[] = "internal_run_death_test";
+inline const char kInternalRunDeathTestFlag[] = "internal_run_death_test";
 
 // A string passed to EXPECT_DEATH (etc.) is caught by one of these overloads
 // and interpreted as a regex (rather than an Eq matcher) for legacy
