@@ -2,12 +2,33 @@
 <Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F10D22F8-AC7B-4213-8720-608E7D878CD2}</ProjectGuid>
-    <RootNamespace>gmock_test</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(SolutionDir)googlemock.props" />
   <ItemGroup>
-    <ClCompile Include="..\test\gmock_all_test.cc" />
+    <ClCompile Include="..\..\test\gmock_link_test.h" />
+    <ClCompile Include="..\..\test\gmock-matchers_test.h" />
+    <ClCompile Include="..\..\test\gmock_all_test.cc" />
+    <ClCompile Include="..\..\test\gmock_ex_test.cc" />
+    <ClCompile Include="..\..\test\gmock_leak_test_.cc" />
+    <ClCompile Include="..\..\test\gmock_link_test.cc" />
+    <ClCompile Include="..\..\test\gmock_link2_test.cc" />
+    <ClCompile Include="..\..\test\gmock_output_test_.cc" />
+    <ClCompile Include="..\..\test\gmock_stress_test.cc" />
+    <ClCompile Include="..\..\test\gmock_test.cc" />
+    <ClCompile Include="..\..\test\gmock-actions_test.cc" />
+    <ClCompile Include="..\..\test\gmock-cardinalities_test.cc" />
+    <ClCompile Include="..\..\test\gmock-function-mocker_test.cc" />
+    <ClCompile Include="..\..\test\gmock-internal-utils_test.cc" />
+    <ClCompile Include="..\..\test\gmock-matchers-arithmetic_test.cc" />
+    <ClCompile Include="..\..\test\gmock-matchers-comparisons_test.cc" />
+    <ClCompile Include="..\..\test\gmock-matchers-containers_test.cc" />
+    <ClCompile Include="..\..\test\gmock-matchers-misc_test.cc" />
+    <ClCompile Include="..\..\test\gmock-more-actions_test.cc" />
+    <ClCompile Include="..\..\test\gmock-nice-strict_test.cc" />
+    <ClCompile Include="..\..\test\gmock-port_test.cc" />
+    <ClCompile Include="..\..\test\gmock-pp_test.cc" />
+    <ClCompile Include="..\..\test\gmock-pp-string_test.cc" />
+    <ClCompile Include="..\..\test\gmock-spec-builders_test.cc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\gmock_main\gmock_main.vcxproj">
@@ -16,5 +37,4 @@
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
