@@ -7,7 +7,8 @@
 #include "gtest/gtest.h"
 #include "gtest/internal/gtest-port.h"
 
-#if GTEST_HAS_FILE_SYSTEM
+// NOTE(phl): the code below is full of Linux-specific calls.
+#if GTEST_HAS_FILE_SYSTEM && !defined(_MSC_VER)
 
 namespace {
 
@@ -96,6 +97,6 @@ TEST(SrcDirTest, NotInEnvironment) {
   EXPECT_NE(testing::SrcDir(), "");
 }
 
-#endif  // GTEST_HAS_FILE_SYSTEM
-
 }  // namespace
+
+#endif  // GTEST_HAS_FILE_SYSTEM
