@@ -33,6 +33,7 @@
 // desired messages.  Therefore, most tests in this file are MEANT TO
 // FAIL.
 
+#ifndef PRINCIPIA
 #include <stdlib.h>
 
 #include <algorithm>
@@ -1018,7 +1019,6 @@ TEST_F(TestSuiteThatSkipsInSetUp, ShouldNotRun) { std::abort(); }
 // The idea is to use Google Test to run all the tests we have defined (some
 // of them are intended to fail), and then compare the test results
 // with the "golden" file.
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   GTEST_FLAG_SET(print_time, false);
 

@@ -36,6 +36,7 @@
 // This program will be invoked from a Python unit test.
 // Don't run it directly.
 
+#ifndef PRINCIPIA
 #include <ostream>
 #include <string>
 
@@ -136,7 +137,6 @@ REGISTER_TYPED_TEST_SUITE_P(TypeParamTest, TestA, TestB);
 
 INSTANTIATE_TYPED_TEST_SUITE_P(My, TypeParamTest, MyTypes);
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
 

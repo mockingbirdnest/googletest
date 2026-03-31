@@ -33,6 +33,7 @@
 // invoked by googletest-throw-on-failure-test.py, and is expected to exit
 // with non-zero in the throw-on-failure mode or 0 otherwise.
 
+#ifndef PRINCIPIA
 #include <stdio.h>   // for fflush, fprintf, NULL, etc.
 #include <stdlib.h>  // for exit
 
@@ -49,7 +50,6 @@ void TerminateHandler() {
   exit(1);
 }
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
 #if GTEST_HAS_EXCEPTIONS
   std::set_terminate(&TerminateHandler);

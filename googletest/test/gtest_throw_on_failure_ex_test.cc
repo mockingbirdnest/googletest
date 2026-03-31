@@ -29,6 +29,7 @@
 
 // Tests Google Test's throw-on-failure mode with exceptions enabled.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -76,7 +77,6 @@ void TestFailureThrowsRuntimeError() {
   Fail("A failed assertion should've thrown but didn't.");
 }
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   testing::InitGoogleTest(&argc, argv);
 

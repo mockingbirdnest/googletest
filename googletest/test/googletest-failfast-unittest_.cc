@@ -36,6 +36,7 @@
 // The program will be invoked from a Python unit test.  Don't run it
 // directly.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
 namespace {
@@ -159,7 +160,6 @@ TEST(HasSkipTest, Test4) { FAIL() << "Expected failure."; }
 
 }  // namespace
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   ::testing::InitGoogleTest(&argc, argv);
   ::testing::UnitTest::GetInstance()->listeners().Append(new MyTestListener());

@@ -37,6 +37,7 @@
 // directly.
 // clang-format off
 
+#ifndef PRINCIPIA
 #include <string>
 
 #include "gtest/gtest.h"
@@ -203,7 +204,6 @@ typedef testing::Types<int, long> TypeParameterizedTestSuiteTypes;  // NOLINT
 INSTANTIATE_TYPED_TEST_SUITE_P(Single, TypeParameterizedTestSuite,
                                TypeParameterizedTestSuiteTypes);
 
-#ifndef PRINCIPIA
 int main(int argc, char** argv) {
   InitGoogleTest(&argc, argv);
 

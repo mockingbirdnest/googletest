@@ -36,6 +36,7 @@
 // The program will be invoked from a Python unit test.  Don't run it
 // directly.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
 namespace {
@@ -99,7 +100,6 @@ INSTANTIATE_TEST_SUITE_P(SeqQ, ParamTest, testing::Values(5, 6));
 
 }  // namespace
 
-#ifndef PRINCIPIA
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
 

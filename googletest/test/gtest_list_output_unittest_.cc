@@ -38,6 +38,7 @@
 // This program will be invoked from a Python unit test.
 // Don't run it directly.
 
+#ifndef PRINCIPIA
 #include "gtest/gtest.h"
 
 TEST(FooTest, Test1) {}
@@ -70,7 +71,6 @@ typedef testing::Types<int, bool> TypeParameterizedTestSuiteTypes;  // NOLINT
 INSTANTIATE_TYPED_TEST_SUITE_P(Single, TypeParameterizedTestSuite,
                                TypeParameterizedTestSuiteTypes);
 
-#ifndef PRINCIPIA
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
 
