@@ -30,6 +30,7 @@
 // Tests Google Mock's output in various scenarios.  This ensures that
 // Google Mock's messages are readable and useful.
 
+#ifndef PRINCIPIA
 #include <stdio.h>
 
 #include <string>
@@ -284,3 +285,4 @@ int main(int argc, char** argv) {
 }
 
 GTEST_DISABLE_MSC_WARNINGS_POP_()  // 4100
+#endif  // PRINCIPIA

@@ -30,6 +30,7 @@
 // Tests that Google Mock constructs can be used in a large number of
 // threads concurrently.
 
+#ifndef PRINCIPIA
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 
@@ -225,3 +226,4 @@ int main(int argc, char** argv) {
   printf("\nPASS\n");
   return 0;
 }
+#endif
