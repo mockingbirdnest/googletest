@@ -1,4 +1,4 @@
-# This script helps creating project files for benchmark.  The argument is the path of googletest/googletest/.
+# This script helps creating project files for googletest.  The argument is the path of googletest/googletest/.
 # It produces four pairs of *.vcxproj, *.vcxproj.filters files for the four projects.
 
 $dir = resolve-path $args[0]
