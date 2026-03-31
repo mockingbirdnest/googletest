@@ -4,10 +4,6 @@
     <ProjectGuid>{24848551-EF4F-47E8-9A9D-EA4D49BC3ECA}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-  </PropertyGroup>
   <Import Project="$(SolutionDir)googletest.props" />
   <ItemGroup>
     <ClCompile Include="..\..\test\production.h" />
