@@ -71,7 +71,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <PreprocessorDefinitions>PRINCIPIA;WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GTEST_HAS_ABSL;PRINCIPIA;WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <TreatWarningAsError>true</TreatWarningAsError>
       <WarningLevel>Level3</WarningLevel>
@@ -119,6 +119,8 @@
 
   <!--Import our property sheets.-->
   <ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)google_abseil-cpp.props" />
+    <Import Project="$(SolutionDir)google_re2.props" />
     <Import Project="$(SolutionDir)portability_macros.props"/>
   </ImportGroup>
 
