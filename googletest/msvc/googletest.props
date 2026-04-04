@@ -25,8 +25,8 @@
     <PrincipiaBenchmarkProject>true</PrincipiaBenchmarkProject>
     <PrincipiaBenchmarkProject Condition="$(ProjectName) != no_such_project">false</PrincipiaBenchmarkProject>
     <PrincipiaTestProject>true</PrincipiaTestProject>
-    <PrincipiaTestProject Condition="$(ProjectName) != gtest_unittest and
-                                     $(ProjectName) != gtest_prod_test">false</PrincipiaTestProject>
+    <PrincipiaTestProject Condition="$(ProjectName) != prod_tests and
+                                     $(ProjectName) != tests">false</PrincipiaTestProject>
     <!--Predicates.-->
     <PrincipiaMainProject>false</PrincipiaMainProject>
     <PrincipiaMainProject Condition="$(PrincipiaBenchmarkProject) or $(PrincipiaTestProject)">true</PrincipiaMainProject>

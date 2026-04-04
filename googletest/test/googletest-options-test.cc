@@ -101,11 +101,7 @@ TEST(OutputFileHelpersTest, GetCurrentExecutableName) {
   const std::string exe_str = GetCurrentExecutableName().string();
 #if GTEST_OS_WINDOWS
   const bool success =
-      _strcmpi("googletest-options-test", exe_str.c_str()) == 0 ||
-      _strcmpi("gtest-options-ex_test", exe_str.c_str()) == 0 ||
-      _strcmpi("gtest_all_test", exe_str.c_str()) == 0 ||
-      _strcmpi("gtest_dll_test", exe_str.c_str()) == 0 ||
-      _strcmpi("gtest_unittest", exe_str.c_str()) == 0;
+      _strcmpi("tests", exe_str.c_str()) == 0;
 #elif GTEST_OS_OS2
   const bool success =
       strcasecmp("googletest-options-test", exe_str.c_str()) == 0 ||
