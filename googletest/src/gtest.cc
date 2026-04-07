@@ -63,6 +63,7 @@
 #include <utility>
 #include <vector>
 
+#include "absl/log/initialize.h"
 #include "gtest/gtest-assertion-result.h"
 #include "gtest/gtest-spi.h"
 #include "gtest/internal/custom/gtest.h"
@@ -6969,6 +6970,10 @@ void ParseGoogleTestFlagsOnly(int* argc, wchar_t** argv) {
 // wchar_t.
 template <typename CharType>
 void InitGoogleTestImpl(int* argc, CharType** argv) {
+  // Note that `InitGoogleMock` calls `InitGoogleTest` internally, so this call
+  // has the right effect no matter whether you link with `gtest_main` or
+  // `gmock_main`.
+  absl::InitializeLog();
   // We don't want to run the initialization code twice.
   if (GTestIsInitialized()) return;
 
